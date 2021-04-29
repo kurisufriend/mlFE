@@ -37,7 +37,7 @@ function loadchapters(manga, chapters)
 			let row = listing.insertRow(-1);
 			let title = row.insertCell(-1);
 			let link = document.createElement("a");
-			link.setAttribute("href", window.location.hostname+"reader.html?cid="+chapter["ipfs_link"]+"&pages="+chapter["page_count"]+"&title="+chapter["title"]);
+			link.setAttribute("href", window.location.hostname+"/reader.html?cid="+chapter["ipfs_link"]+"&pages="+chapter["page_count"]+"&title="+chapter["title"]);
 			link.textContent = chapter["title"];
 			title.appendChild(link);
 			let date = row.insertCell(-1);
