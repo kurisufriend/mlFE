@@ -2,17 +2,22 @@ function setheader(header)
 {
 	document.getElementById("title").innerHTML = header;
 }
-function loadmangos(info)
+function loadmangos(info, url)
 {
 	let listing = document.getElementById("listing");
 	info.forEach(manga =>
 	{
 		let row = listing.insertRow(-1);
 		let title = row.insertCell(-1);
+		title.className = "title";
 		let link = document.createElement("a");
 		link.setAttribute("href", window.location+"?id="+manga["id"]);
 		link.textContent = manga["titles"][0];
 		title.appendChild(link);
+		let thumb = document.createElement("img");
+		thumb.setAttribute("src", url+"/manga/thumbnail?id="+manga["id"]);
+		thumb.className = "thumb";
+		title.appendChild(thumb);
 		let author = row.insertCell(-1);
 		author.innerHTML = manga["authors"][0];
 		let time = row.insertCell(-1);
@@ -68,6 +73,6 @@ function load(url = "https://test.cynic.moe")
 		.then(data => setheader(data["name"]+" v"+data["version"]));
 		fetch(url+"/manga/search?sort")
 		.then(response => response.json())
-		.then(data => loadmangos(data));
+		.then(data => loadmangos(data, url));
 	}
 }
