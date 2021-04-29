@@ -1,0 +1,102 @@
+#titlebar_container {
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+}
+
+#titlebar {
+    z-index: 98;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid var(--dark-grey);
+    transform: translate(-50%, -50%);
+    background-color: var(--medium-grey);
+    left: 50%;
+    width: 80%;
+    height: 40px;
+    margin-top: 30px;
+}
+
+#titlebar .text {
+    margin: 10px;
+    float: left;
+    color: black;
+}
+
+#titlebar button {
+    background-color: var(--transparent);
+    float: right;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: 40px;
+    width: 40px;
+}
+
+#titlebar .back {
+    float: left;
+}
+
+#titlebar img.back {
+    width: 15px;
+    height: 15px;
+}
+
+#titlebar img {
+    width: 20px;
+    height: 20px;
+}
+
+.image_fill {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 95;
+}
+
+.image_left {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    top : 0;
+    right: 50%;
+    z-index: 96;
+}
+
+.image_right {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    top: 0;
+    left: 50%;
+    z-index: 96;
+}
+
+#page_left {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0%;
+    z-index: 97;
+}
+
+#page_right {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left:50%;
+    z-index: 97;
+}
+
+#footer {
+    z-index: 98;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

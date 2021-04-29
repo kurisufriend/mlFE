@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Mangaloid</title>
+
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+        <link rel="stylesheet" type="text/css" href="css/reader.css"/>
+    </head>
+    <body>
+
+        <div id="titlebar_container">
+        <div id="titlebar">
+            <button class="back" onclick="history.back()">
+                <img class="back" src="img/back.png"/>
+            </button>
+
+            <span class="text"></span>
+            <button class="download">
+                <img class="download" src="img/download.png"/>
+            </button>
+            <button class="layout">
+                <img class="layout" src="img/single.png"/>
+            </button>
+            <button class="fit">
+                <img class="fit" src="img/height.png"/>
+            </button>
+            <button class="invert">
+                <img class="invert" src="img/invert.png"/>
+            </button>
+        </div>
+        </div>
+
+        <div id="page_left"></div>
+        <div id="page_right"></div>
+        <div id="page_view"></div>
+
+        <div id="footer">
+            <span id="counter">0/?</span>
+        </div>
+
+        <script type="text/javascript" src="js/reader.js"></script>
+        <script>
+            document.onreadystatechange = function () {
+                            if(document.readyState == "interactive"){
+                                load_pages();
+                            }
+                        };
+        </script>
+    </body>
+</html>
