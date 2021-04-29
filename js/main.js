@@ -1,6 +1,7 @@
-function setheader(header)
+function setheader(header, author = null)
 {
 	document.getElementById("title").innerHTML = header;
+	document.getElementById("op").innerHTML = author;
 }
 function loadmangos(info, url)
 {
@@ -23,19 +24,17 @@ function loadmangos(info, url)
 		let time = row.insertCell(-1);
 		time.innerHTML = new Date(manga["last_updated"]).toLocaleDateString("en-US");
 	});
-	console.log(info);
 }
 function loadchapters(manga, chapters)
 {
 	if (manga)
 	{
-		setheader(manga["titles"][0]);
+		setheader(manga["titles"][0], manga["authors"][0]);
 	}
 	if (chapters)
 	{
 		document.getElementById("c2").innerHTML = "pages";
 		document.getElementById("c3").innerHTML = "date";
-		console.log(chapters);
 		let listing = document.getElementById("listing");
 		chapters.forEach(chapter =>
 		{
@@ -70,7 +69,7 @@ function load(url = "https://test.cynic.moe")
 	{
 		fetch(url+"/info")
 		.then(response => response.json())
-		.then(data => setheader(data["name"]+" v"+data["version"]));
+		.then(data => setheader(data["name"]+" v"+data["version"], data["operator"]));
 		fetch(url+"/manga/search?sort")
 		.then(response => response.json())
 		.then(data => loadmangos(data, url));
