@@ -6,9 +6,15 @@ function parseinfo(info)
 function loadmangos(info)
 {
 	let listing = document.getElementById("listing");
-	info.forEach(manga => function(manga)
+	info.forEach(manga =>
 	{
-		console.log(manga["id"]);
+		let row = listing.insertRow(-1);
+		let title = row.insertCell(-1);
+		title.innerHTML = manga["titles"][0];
+		let author = row.insertCell(-1);
+		author.innerHTML = manga["author"];
+		let time = row.insertCell(-1);
+		time.innerHTML = new Date(manga["last_updated"]).toLocaleDateString("en-US");
 	});
 	console.log(info);
 }
