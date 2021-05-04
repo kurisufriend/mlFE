@@ -1,6 +1,7 @@
 function setheader(header, author = null)
 {
 	document.getElementById("title").innerHTML = header;
+	document.getElementById("pagetitle").innerHTML = header;
 	document.getElementById("op").innerHTML = author;
 }
 function loadmangos(info, url)
