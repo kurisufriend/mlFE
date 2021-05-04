@@ -22,7 +22,7 @@ function loadmangos(info, url)
 		let author = row.insertCell(-1);
 		author.innerHTML = manga["authors"][0];
 		let time = row.insertCell(-1);
-		time.innerHTML = new Date(manga["last_updated"]).toLocaleDateString("en-US");
+		time.innerHTML = new Date(manga["last_updated"]*1000).toLocaleDateString("en-US");
 	});
 }
 function loadchapters(manga, chapters)
@@ -47,7 +47,7 @@ function loadchapters(manga, chapters)
 			let date = row.insertCell(-1);
 			date.innerHTML = chapter["page_count"];
 			let time = row.insertCell(-1);
-			time.innerHTML = new Date(chapter["date_added"]).toLocaleDateString("en-US");
+			time.innerHTML = new Date(chapter["date_added"]*1000).toLocaleDateString("en-US");
 		});
 	}
 }
