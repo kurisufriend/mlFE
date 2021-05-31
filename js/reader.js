@@ -205,7 +205,7 @@ function load_pages() {
         for (var i = 1; i <= pageNo; i++) {
             pageView.appendChild(Object.assign(
                 document.createElement("img"),
-                {draggable: "false", src: `https://ipfs.cynic.moe/ipfs/${cid}/${i}.jpg`, id: `image${i}`, visibility: "hidden"}
+                {draggable: "false", src: `https://ipfs.cynic.moe/ipfs/${cid}/${i}.webp`, id: `image${i}`, visibility: "hidden"}
             ));
         }
 
